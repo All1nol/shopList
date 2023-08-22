@@ -11,6 +11,7 @@ const _getList = document.querySelector("#getList");
 const addToList = document.querySelector("#addToList");
 const removeFromList = document.querySelector("#removeFromList");
 const editListItem = document.querySelector("#editListItem");
+const removeProductBtn = document.querySelector("#removeProductBtn");
 
 const productList = [];
 let autoId = 1;
@@ -36,14 +37,33 @@ addToList.addEventListener("submit", function (event) {
 
 _getList.addEventListener("click", function (event) { 
   if (event.target.classList.contains("removeFromList")) {           //used gpt
-    const idToDelete = parseInt(event.target.getAttribute("data-id"));
-    _removeFromList(idToDelete);
+    const indexToRemove = parseInt(event.target.getAttribute("data-id"));
+    _removeFromList(indexToRemove);
     updateUI();
   } else if (event.target.classList.contains("editListItem")) {
     const idToEdit = parseInt(event.target.getAttribute("data-id"));
     editItem(idToEdit);
+  }else if(event.target.classList.contains("removeProductBtn")){
+    const IdToDelete = parseInt(event.target.getAttribute("data-id"));
+    DeleteProductId(IdToDelete);
   }
 });
+
+removeProductBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  const removeProductIdInp = parseInt(document.querySelector("#removeProductId").value);
+  DeleteProductId(removeProductIdInp);
+  updateUI();
+});
+
+function DeleteProductId(id){
+  const indexToRemove = productList.findIndex(item => item.id === id);  //used gpt
+  if (indexToRemove !== -1) {
+    productList.splice(indexToRemove, 1);
+  } else {
+    console.log("Error");
+  }
+}
 
 function getList(square) {
   const productSquare = document.createElement("div");
