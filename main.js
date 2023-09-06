@@ -78,11 +78,7 @@ ramazonApp.editProduct(1,"Milk 2", "this is milk 2");
 ramazonApp.removeProduct(2);
 
 
-const addToList = document.querySelector("#addToList");
-const deleteByIdBtn =document.querySelector("#deleteById");
-const listContainer = document.querySelector("#getList");
-
-
+console.log(addToList);
 addToList.addEventListener("submit", function(event) {
   event.preventDefault();
   const nameInput = document.querySelector("#name");
@@ -127,6 +123,8 @@ deleteProductBtn.addEventListener("click", function(event){
 
 
 ramazonApp.updateUI();
+export default ramazonApp;
+
 // addToList.addEventListener("submit", function (event) {
 //   event.preventDefault();
 //   const nameInp = document.querySelector("#name");

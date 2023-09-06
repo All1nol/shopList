@@ -1,0 +1,30 @@
+{
+  "name": "shoplistproject",
+  "version": "1.0.0",
+  "description": "",
+  "type=": "module",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/All1nol/shopList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/All1nol/shopList/issues"
+  },
+  "homepage": "https://github.com/All1nol/shopList#readme",
+  "dependencies": {
+    "jest": "^29.6.4",
+    "jest-environment-jsdom": "^29.6.4",
+    "jsdom": "^22.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
+    "babel-jest": "^29.6.4"
+  }
+}
