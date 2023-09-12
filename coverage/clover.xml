@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693928477013" clover="3.2.0">
-  <project timestamp="1693928477014" name="All files">
-    <metrics statements="22" coveredstatements="10" conditionals="6" coveredconditionals="0" methods="9" coveredmethods="3" elements="37" coveredelements="13" complexity="0" loc="22" ncloc="22" packages="1" files="1" classes="1"/>
+<coverage generated="1694509988150" clover="3.2.0">
+  <project timestamp="1694509988150" name="All files">
+    <metrics statements="22" coveredstatements="17" conditionals="6" coveredconditionals="2" methods="9" coveredmethods="7" elements="37" coveredelements="26" complexity="0" loc="22" ncloc="22" packages="1" files="1" classes="1"/>
     <file name="app.js" path="C:\Users\newac\Desktop\Js\shopListProject\app.js">
-      <metrics statements="22" coveredstatements="10" conditionals="6" coveredconditionals="0" methods="9" coveredmethods="3"/>
+      <metrics statements="22" coveredstatements="17" conditionals="6" coveredconditionals="2" methods="9" coveredmethods="7"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
+      <line num="11" count="4" type="stmt"/>
+      <line num="12" count="4" type="stmt"/>
       <line num="16" count="1" type="stmt"/>
       <line num="17" count="1" type="stmt"/>
       <line num="18" count="1" type="stmt"/>
       <line num="19" count="1" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
-      <line num="24" count="0" type="stmt"/>
-      <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="26" count="0" type="stmt"/>
-      <line num="31" count="0" type="stmt"/>
-      <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="34" count="0" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="25" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="32" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="33" count="2" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
       <line num="39" count="0" type="stmt"/>
       <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="41" count="0" type="stmt"/>
