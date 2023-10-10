@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76% </span>
+                <span class="strong">72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/25</span>
+                <span class='fraction'>18/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.77% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/9</span>
+                <span class='fraction'>6/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.27% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/22</span>
+                <span class='fraction'>18/22</span>
             </div>
         
             
@@ -141,25 +141,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,27 +192,27 @@
     }
   
     removeProduct(id) {
-      const indexToRemove = this.productList.findIndex(item =&gt; item.id === id);
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (indexToRemove !== -1) {
-        this.productList.splice(indexToRemove, 1);
+      const indexToRemove = this.productList.findIndex(<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item.id === id)</span>;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (indexToRemove !== -1) {
+<span class="cstat-no" title="statement not covered" >        this.productList.splice(indexToRemove, 1);</span>
       }
     }
   
     editProduct(id, newName, newDescription) {
-      const product = this.productList.find(item =&gt; item.id === id);
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (product) {
-        product.name = newName;
-        product.description = newDescription;
+      const product = this.productList.find(<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item.id === id)</span>;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (product) {
+<span class="cstat-no" title="statement not covered" >        product.name = newName;</span>
+<span class="cstat-no" title="statement not covered" >        product.description = newDescription;</span>
       }
     }
   
-<span class="fstat-no" title="function not covered" >    de</span>leteById(id){
-      const indexToRemove = <span class="cstat-no" title="statement not covered" >this.productList.findIndex(<span class="fstat-no" title="function not covered" >it</span>em=&gt; <span class="cstat-no" title="statement not covered" >item.id ===id)</span>;</span>
-<span class="cstat-no" title="statement not covered" >      if (indexToRemove !== -1) {</span>
+    deleteById(id){
+      const indexToRemove = this.productList.findIndex(<span class="fstat-no" title="function not covered" >it</span>em=&gt; <span class="cstat-no" title="statement not covered" >item.id ===id)</span>;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (indexToRemove !== -1) {
 <span class="cstat-no" title="statement not covered" >        productList.splice(indexToRemove,1);</span>
       }else{
-        let error = <span class="cstat-no" title="statement not covered" >prompt("index do not exist");</span>
-<span class="cstat-no" title="statement not covered" >        console.log(error);</span>
+        let error = prompt("index do not exist");
+        console.log(error);
       }
     }
   }
@@ -229,7 +229,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-12T09:13:08.096Z
+                at 2023-09-12T14:38:13.078Z
             </div>
         <script src="prettify.js"></script>
         <script>
