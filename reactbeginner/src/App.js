@@ -1,41 +1,39 @@
-import React, { useState } from 'react';
-import './App.css';
-import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
-
+import React, { useState } from "react";
+import "./App.css";
+import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js'
+import { ProductProvider, useProduct } from './components/product';
 function App() {
-  const [productList, setProductList] = useState([]);
-  const [newProduct, setNewProduct] = useState('');
-  const [editProductId, setEditProductId] = useState(null);
-  const [editedProductName, setEditedProductName] = useState('');
+  const { productList, addProduct, deleteProduct, editProduct } = useProduct();
+  const [newProduct, setNewProduct] = useState("");
+  const [editing, setEditing] = useState(null);
+  const [editValue, setEditValue] = useState("");
 
   const handleAddProduct = (event) => {
     event.preventDefault();
-    if (newProduct.trim() === '') return;
+    if (newProduct.trim() === "") return;
 
     const newProductItem = {
       id: nanoid(),
       name: newProduct,
     };
 
-    setProductList([...productList, newProductItem]);
-    setNewProduct('');
+    addProduct(newProductItem);
+    setNewProduct("");
   };
 
-  const handleDeleteProduct = (index) => {
-    // const deletedProduct = productList[index].name;
-    const updatedList = [...productList];
-    updatedList.splice(index, 1);
-    setProductList(updatedList);
-    // alert(`Deleted product: ${deletedProduct}`);
+  const handleEdit = (id) => {
+    setEditing(id);
+    const productToEdit = productList.find((product) => product.id === id);
+    setEditValue(productToEdit.name);
   };
 
-  const handleEditProduct = (index) => {
-    if (editedProductName.trim() === '') return;
-    const updatedList = [...productList];
-    updatedList[index].name = editedProductName;
-    setProductList(updatedList);
-    setEditProductId(null);
-    setEditedProductName('');
+  const handleSaveEdit = (id) => {
+    editProduct(id, editValue);
+    setEditing(null);
+  };
+
+  const handleCancelEdit = () => {
+    setEditing(null);
   };
 
   return (
@@ -51,27 +49,25 @@ function App() {
         <button type="submit">Add</button>
       </form>
       <ul>
-        {productList.map((product, index) => (
-          <li key={index}>
-            {editProductId === index ? (
-              <div>
-                <p>ID: {product.id}</p>
+        <h2>Product List from ProductContext</h2>
+        {productList.map((product) => (
+          <li key={product.id}>
+            {editing === product.id ? (
+              <>
                 <input
                   type="text"
-                  value={editedProductName}
-                  onChange={(event) => setEditedProductName(event.target.value)}
+                  value={editValue}
+                  onChange={(event) => setEditValue(event.target.value)}
                 />
-                <button onClick={() => handleEditProduct(index)}>Save</button>
-              </div>
+                <button onClick={() => handleSaveEdit(product.id)}>Save</button>
+                <button onClick={handleCancelEdit}>Cancel</button>
+              </>
             ) : (
-              <div>
-                <p>ID: {product.id}</p>
-                <p>Name: {product.name}</p>
-                <button onClick={() => handleDeleteProduct(index)}>
-                  Delete
-                </button>
-                <button onClick={() => setEditProductId(index)}>Edit</button>
-              </div>
+              <>
+                {product.name}
+                <button onClick={() => handleEdit(product.id)}>Edit</button>
+                <button onClick={() => deleteProduct(product.id)}>Delete</button>
+              </>
             )}
           </li>
         ))}
@@ -79,6 +75,11 @@ function App() {
     </div>
   );
 }
- 
 
-export default App;
+export default function AppWithProviders() {
+  return (
+    <ProductProvider>
+      <App />
+    </ProductProvider>
+  );
+}
