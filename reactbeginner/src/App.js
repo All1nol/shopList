@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
+
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js'
-import { ProductProvider, useProduct } from './components/product';
+import { useProduct } from './providers/product';
+import Product from "./components/Product"
 function App() {
   const { productList, addProduct, deleteProduct, editProduct } = useProduct();
   const [newProduct, setNewProduct] = useState("");
@@ -52,6 +54,7 @@ function App() {
         <h2>Product List from ProductContext</h2>
         {productList.map((product) => (
           <li key={product.id}>
+            <Product productId={product.id} />
             {editing === product.id ? (
               <>
                 <input
@@ -76,10 +79,4 @@ function App() {
   );
 }
 
-export default function AppWithProviders() {
-  return (
-    <ProductProvider>
-      <App />
-    </ProductProvider>
-  );
-}
+export default App

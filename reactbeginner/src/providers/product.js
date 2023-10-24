@@ -7,6 +7,8 @@ export const useProduct = () => {
 export const ProductProvider = ({ children }) => {
   const [productList, setProductList] = useState([]);
 
+  
+
   const addProduct = (newProductItem) => {
     setProductList([...productList, newProductItem]);
   };
